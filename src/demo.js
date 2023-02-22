@@ -1,5 +1,5 @@
 let a = window;
-let b = (p) => p + 3;
+let b = (p) => p + 2;
 module.exports = {
     a,
     b
