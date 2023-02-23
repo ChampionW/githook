@@ -38,6 +38,19 @@
         <div class="box1">盒子1</div>
         <div class="box2">盒子2</div>
     </div>
+    <div id="app">
+        动态加载
+    </div>
 </body>
+<script type="module">
+    const app = require('./demo.js')
+    console.log(app)
+    // 动态加载
+    document.getElementById('app').addEventListener('click', function () {
+        import('./demo.js').then((module) => {
+            console.log(module.default(1))
+        })
+    }, true)
+</script>
 
 </html>
