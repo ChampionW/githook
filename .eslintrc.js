@@ -10,7 +10,6 @@ module.exports = {
     },
     "parser": "@babel/eslint-parser",
     parserOptions: {
-        // parser: '@babel/eslint-parser',
         sourceType: 'module',
         allowImportExportEverywhere: true,
         // requireConfigFile: false
