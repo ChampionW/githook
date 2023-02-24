@@ -1,7 +1,7 @@
 import * as path from 'path';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/main.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].bundle.js',
@@ -11,7 +11,7 @@ module.exports = {
         open: true,
         port: 8080,
         client: {
-          overlay: true,
+          overlay: true, // 此处配置,当项目报错的时候，是否在客户端展示
         },
       },    
     mode: 'development',
@@ -23,7 +23,11 @@ module.exports = {
     module: {
         rules: [
             // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            { test: /\.tsx?$/, loader: "ts-loader" },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ]
     },
     plugins: [

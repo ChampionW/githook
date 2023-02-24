@@ -1,11 +1,19 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "esnext",
+        "target": "esnext",
         "noImplicitAny": true,
-        "removeComments": true,
+        "removeComments": false,
         "preserveConstEnums": true,
         // "outFile": "../../built/local/tsc.js",
-        "sourceMap": true
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
     },
     "include": [
         "src/**/*",
