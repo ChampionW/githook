@@ -23,6 +23,7 @@
   }
   return r
 })()({
+  // eslint-disable-next-line no-unused-vars
   1: [function (require, module, exports) {
     "use strict"
 
@@ -83,6 +84,7 @@
     module.exports = unique
 
   }, {}],
+  // eslint-disable-next-line no-unused-vars
   2: [function (require, module, exports) {
     console.log("模块中的代码开始执行")
     document.getElementById('app').addEventListener('click', function () {
