@@ -17,6 +17,6 @@ module.exports = {
     ],
     rules: {
         //警告等级
-        'no-console': 'error',
+        'no-console': 'off',
     }
 }
