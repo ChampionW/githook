@@ -8,15 +8,19 @@ module.exports = {
         browser: true, // 
         node: true
     },
+    "parser": "@babel/eslint-parser",
     parserOptions: {
-        parser: 'babel-eslint',
-        sourceType: 'module'
+        // parser: '@babel/eslint-parser',
+        sourceType: 'module',
+        allowImportExportEverywhere: true,
+        requireConfigFile: false
     },
-    "extends": [
+    extends: [
         "eslint:recommended"
     ],
     rules: {
         //警告等级
         'no-console': 'off',
-    }
+    },
+    plugins: ['import'],
 }

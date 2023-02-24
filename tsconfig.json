@@ -9,7 +9,7 @@
     },
     "include": [
         "src/**/*",
-        "utils/**/*"
+        "utils/**/*",
     ],
     "exclude": [
         "node_modules",
