@@ -1,18 +1,25 @@
 {
     "compilerOptions": {
+        "jsx": "react",
         "module": "esnext",
         "target": "esnext",
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "removeComments": false,
         "preserveConstEnums": true,
         // "outFile": "../../built/local/tsc.js",
         "sourceMap": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            }
+        ]
     },
     "ts-node": {
         "compilerOptions": {
-            "module": "CommonJS"
+            "module": "CommonJS",
         }
     },
     "include": [

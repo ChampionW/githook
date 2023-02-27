@@ -1,7 +1,8 @@
 import * as path from 'path';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MinCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
-    entry: './src/main.ts',
+    entry: './src/main.tsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].bundle.js',
@@ -25,14 +26,41 @@ module.exports = {
             // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
             { test: /\.tsx?$/, loader: "ts-loader" },
             {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                test: /\.(css|less)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: MinCssExtractPlugin.loader, // 将css代码从js文件当中抽离出来
+                    },
+                //   {
+                //     loader: 'style-loader',
+                //   },
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      sourceMap: true,
+                      modules: {
+                        localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                      },
+                    },
+                  },
+                  {
+                    loader: 'less-loader',
+                  },
+                  {
+                    loader: "postcss-loader"
+                  },
+                ],
             },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
         template: './template.html',
-        })
+        }),
+        new MinCssExtractPlugin({
+            filename: "[name].champion.css",
+            chunkFilename: "[id].dawei.css",
+          }),
     ],
 };

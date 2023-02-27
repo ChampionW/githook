@@ -2,4 +2,10 @@ div {
     font-size: 16px;
     color: red;
     font-weight: 400;
+    /* transform: translateX(100px); */
+}
+
+#app {
+    background-color: blue;
+    transform: translateX(100px);
 }
