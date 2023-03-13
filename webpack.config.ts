@@ -1,6 +1,9 @@
 import * as path from 'path';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MinCssExtractPlugin = require('mini-css-extract-plugin')
+var webpack = require('webpack');
+console.log(process.env.myDev,'============')
+const myDev:string = process.env.myDev;
 module.exports = {
     entry: './src/main.tsx',
     output: {
@@ -62,5 +65,10 @@ module.exports = {
             filename: "[name].champion.css",
             chunkFilename: "[id].dawei.css",
           }),
+          new webpack.DefinePlugin({
+
+            'react_app_env': JSON.stringify(myDev)
+
+        })
     ],
 };

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './components/testbutton'
 import React from 'react';
+import {sumDemo} from '../utils/demo/champion'
 
 document.getElementById('app').addEventListener('click', function () {
     import(/* webpackChunkName: 'ImportFuncDemo' */ '../utils/sort').then((module) => {
@@ -22,6 +23,7 @@ document.getElementById('app').addEventListener('click', function () {
     console.log(isNum("12312"))
 }, true)
 
+sumDemo(true,2)
 const root = createRoot(document.getElementById('app'));
 root.render(<App />);
 

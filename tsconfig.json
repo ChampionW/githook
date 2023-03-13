@@ -17,6 +17,9 @@
             }
         ]
     },
+    "files": [
+        "./utils/demo/champion.d.ts"
+    ],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS",
